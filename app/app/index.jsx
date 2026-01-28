@@ -4,6 +4,9 @@ import Navbar from "../components/navbar";
 import Horizontal from "../components/horizontalline";
 import ProfileHeader from "../components/ProfileHeader";
 import ExpandableText from "../components/ExpandabbleText";
+import PostStats from "../components/PostStats";
+import PostImage from "../components/PostImage";
+import ActionButton from "../components/ActionButton";
 
 export default function Index()  {
   return (
@@ -32,22 +35,76 @@ export default function Index()  {
           style={{ paddingHorizontal: 20, fontSize: 14, fontFamily: "Inter-Regular", paddingVertical: 0}}
       />
 
-      {/* <Image
-        source={require("../assets/post1.jpg")}
-        style={{ width: "100%", height: 200, marginTop: 10, resizeMode: "cover" }}
-      /> */}
+      <PostImage
+        source={require("../assets/p1.jpeg")}
+      />
 
-      {/* <View style={{ flexDirection: "row", justifyContent: "space-around", paddingVertical: 15, borderTopWidth: StyleSheet.hairlineWidth, borderBottomWidth: StyleSheet.hairlineWidth, borderColor: 'gray' }}>
-        <TouchableOpacity>
-          <Image source={require("../assets/like.png")} style={{ width: 25, height: 25, resizeMode: "contain" }} />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image source={require("../assets/comment.png")} style={{ width: 25, height: 25, resizeMode: "contain" }} />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image source={require("../assets/share.png")} style={{ width: 25, height: 25, resizeMode: "contain" }} />
-        </TouchableOpacity>
-      </View> */}
+      <PostStats 
+        likes='300'
+        comments='50'
+        reposts='500'
+        icon={require("../assets/response.jpg")}
+      />
+
+      <View style={{ flexDirection: "row", justifyContent: "space-around", paddingVertical: 15, borderTopWidth: 1, borderTopColor: "#eee"   }}>
+        <ActionButton
+          icon={require("../assets/like.png")}
+          label="Like"
+          onPress={() => console.log("Like button pressed")}
+        />
+        <ActionButton
+          icon={require("../assets/comment.png")}
+          label="Comment"
+          onPress={() => console.log("Comment button pressed")}
+        />
+        <ActionButton
+          icon={require("../assets/repost.png")}
+          label="Repost"
+          onPress={() => console.log("Repost button pressed")}
+        />
+        <ActionButton
+          icon={require("../assets/send.png")}
+          label="Share"
+          onPress={() => console.log("Share button pressed")}
+        />
+      </View>
+
+      <Horizontal />
+
+      <View style={{ flexDirection: "row", alignItems: "center", padding: 15, justifyContent: "space-around" }}>
+        <ActionButton
+          icon={require("../assets/home.png")}
+          label="Home"
+          onPress={() => console.log("home button pressed")}
+          iconSize={25}
+        />
+        <ActionButton
+          icon={require("../assets/network.png")}
+          label="My Network"
+          onPress={() => console.log("network button pressed")}
+          iconSize={25}
+        />
+        <ActionButton
+          icon={require("../assets/post.png")}
+          label="Post"
+          onPress={() => console.log("jobs button pressed")}
+          iconSize={25}
+        />
+        <ActionButton
+          icon={require("../assets/notification.png")}
+          label="Notifications"
+          onPress={() => console.log("notification button pressed")}
+          iconSize={25}
+        />
+        <ActionButton
+          icon={require("../assets/job.png")}
+          label="Jobs"
+          onPress={() => console.log("notifications button pressed")}
+          iconSize={25}
+        />  
+
+
+      </View>
 
 
     </SafeAreaView>
